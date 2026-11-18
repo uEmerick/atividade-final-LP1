@@ -1,0 +1,120 @@
+/* Folha de caderno: linhas azuis + margem vermelha */
+.papel {
+  --tinta: #1f3a93;
+  --papel: #fdfbf3;
+
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 30px 30px 30px 70px;
+  color: var(--tinta);
+  font-size: 1.3rem;
+  background-color: var(--papel);
+  background-image:
+    linear-gradient(to right, transparent 54px, #e57373 54px, #e57373 56px, transparent 56px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 31px, #b9d3ee 31px, #b9d3ee 32px);
+  border: 2px solid #333;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.15);
+  transform: rotate(-0.6deg);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título sublinhado à mão */
+.intro h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  transform: rotate(-2deg);
+  border-bottom: 3px solid var(--tinta);
+  border-radius: 0 0 60% 40% / 0 0 8px 12px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Campos como se fossem riscados na folha */
+.papel input {
+  width: 100%;
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: var(--tinta);
+  background: transparent;
+  border: 2px solid var(--tinta);
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  outline: none;
+}
+
+.papel input:focus {
+  background-color: rgba(255, 235, 59, 0.25);
+}
+
+/* Botões desenhados à caneta */
+.papel button {
+  padding: 8px 20px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  color: var(--tinta);
+  background-color: var(--papel);
+  border: 2px solid var(--tinta);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 3px 4px 0 var(--tinta);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.papel button:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.papel button:active {
+  transform: translate(3px, 4px);
+  box-shadow: none;
+}
+
+/* Linha de separação tracejada, como rabisco */
+.papel hr {
+  border: none;
+  border-top: 3px dashed var(--tinta);
+  margin: 10px 0;
+  opacity: 0.6;
+}
+
+/* Resultados marcados com caneta marca-texto */
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.description p {
+  padding: 0 8px;
+  background: linear-gradient(to bottom, transparent 45%, rgba(255, 235, 59, 0.7) 45%, rgba(255, 235, 59, 0.7) 90%, transparent 90%);
+}
+
+.description p:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.description p:nth-child(3) {
+  transform: rotate(-1deg);
+}
