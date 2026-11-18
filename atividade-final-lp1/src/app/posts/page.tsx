@@ -23,13 +23,13 @@ const PostsPage = () => {
   }, []);
 
   return (
-    <div>
-        <h1>Gerenciamento de Posts</h1>
+    <div className={styles.container}>
+        <h1 className={styles.titulo}>Gerenciamento de Posts</h1>
         <search>
-            <input type="search" placeholder="Pesquisar..." value={termo} onChange={(e) => setTermo(e.target.value)} />
+            <input type="search" className={styles.pesquisa} placeholder="Pesquisar..." value={termo} onChange={(e) => setTermo(e.target.value)} />
         </search>
-        <span>{postsFiltrados.length}/{posts.length}registro(s)</span>
-            <table>
+        <span className={styles.contador}>{postsFiltrados.length}/{posts.length} registro(s)</span>
+            <table className={styles.tabela}>
             <thead>
                 <tr>
                 <th>ID</th>
